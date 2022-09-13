@@ -20,24 +20,4 @@ public class WebClientService {
                 .retrieve()
                 .bodyToFlux(Invoice.class);
     }
-
-    /*
-    public Flux<User> findUsers() {
-        return this.webClient.get().uri("/user")
-                .headers(h -> h.setBearerAuth(token))
-                .retrieve()
-                .bodyToFlux(User.class);
-    }
-
-     */
-
-    /*
-    public Mono<User> findUserById(Long id) {
-        return this.webClient.get().uri("/user/{id}", id)
-                .headers(h -> h.setBearerAuth(token))
-                .retrieve()
-                .bodyToMono(User.class);
-    }
-
-     */
 }

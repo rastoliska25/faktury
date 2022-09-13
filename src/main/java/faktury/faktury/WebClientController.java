@@ -29,5 +29,4 @@ WebClientController {
         WebClientService.token = token;
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }
