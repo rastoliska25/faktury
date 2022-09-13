@@ -1,0 +1,16 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://identity.idoklad.cz/server/connect/token
+      client:
+        provider:
+          your-provider:
+            issuer-uri: https://identity.idoklad.cz/server/connect/token
+        registration:
+          your-provider:
+            client-id: 09ecd20e-2b29-4a03-af66-794ef3a197ea
+            client-secret: 00548701-72ff-4cd7-8177-2ee8b1bdb57f
+            scope: idoklad_api
+            authorization-grant-type: client_credentials

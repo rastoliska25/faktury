@@ -20,7 +20,7 @@ WebClientController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Flux<Invoice> findInvoice(@RequestParam("token") String token) {
         WebClientService.token = token;
-        return webClientService.findInvoices();
+        return webClientService.findInvoice();
     }
 
     @GetMapping("/token")
@@ -28,5 +28,12 @@ WebClientController {
     public ResponseEntity<String> getUserById(@RequestParam("token") String token) {
         WebClientService.token = token;
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/invoices", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Flux<Invoice> findInvoices(@RequestParam("token") String token) {
+        WebClientService.token = token;
+        return webClientService.findInvoices();
     }
 }
