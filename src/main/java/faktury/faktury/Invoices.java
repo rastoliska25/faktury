@@ -1,20 +1,18 @@
 package faktury.faktury;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 @Builder
 @Getter
 @AllArgsConstructor
-@lombok.Data
-public class Data {
+@Data
+public class Invoices {
 
     private Integer TotalItems;
     private Integer TotalPages;
-    private List<Invoice> Data;
 
 }
