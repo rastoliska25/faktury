@@ -14,8 +14,8 @@ public class WebClientService {
         this.webClient = webClientBuilder.baseUrl("https://app.idoklad.cz/developer").build();
     }
 
-    public Flux<Invoice> findInvoice() {
-        return this.webClient.get().uri("/api/v2/IssuedInvoices/33759727")
+    public Flux<Invoice> findInvoice(Integer id) {
+        return this.webClient.get().uri("/api/v2/IssuedInvoices/" + id)
                 .headers(h -> h.setBearerAuth(token))
                 .retrieve()
                 .bodyToFlux(Invoice.class);

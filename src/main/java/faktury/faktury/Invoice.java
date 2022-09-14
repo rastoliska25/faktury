@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Builder
 @Getter
@@ -89,6 +90,8 @@ public class Invoice {
     private Boolean IsIncomeTax;
     private Integer RecountVersion;
     private Integer Id;
+
+    private List<IssuedInvoiceItems> IssuedInvoiceItems;
 
 }
 
