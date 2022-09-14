@@ -26,7 +26,7 @@ WebClientController {
 
     @GetMapping(value = "/invoices", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Flux<Invoice> findInvoices(@RequestParam("token") String token) {
+    public Flux<Data> findInvoices(@RequestParam("token") String token) {
         WebClientService.token = token;
         return webClientService.findInvoices();
     }

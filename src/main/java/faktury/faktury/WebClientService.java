@@ -21,11 +21,11 @@ public class WebClientService {
                 .bodyToFlux(Invoice.class);
     }
 
-    public Flux<Invoice> findInvoices() {
+    public Flux<Data> findInvoices() {
         return this.webClient.get().uri("/api/v2/IssuedInvoices")
                 .headers(h -> h.setBearerAuth(token))
                 .retrieve()
-                .bodyToFlux(Invoice.class);
+                .bodyToFlux(Data.class);
     }
 
 }
