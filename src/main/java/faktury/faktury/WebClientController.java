@@ -23,12 +23,6 @@ WebClientController {
         return webClientService.findInvoice(invoiceID);
     }
 
-    @GetMapping("/token")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<String> getToken(@RequestParam("token") String token) {
-        WebClientService.token = token;
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 
     @GetMapping(value = "/invoices", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
